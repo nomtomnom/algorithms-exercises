@@ -1,13 +1,36 @@
 const preorderTraverse = (node, array) => {
-  // code goes here
+  if (!node) return array;
+  // val in array
+  array.push(node.value);
+  // go left & right
+  array = preorderTraverse(node.left, array);
+  array = preorderTraverse(node.right, array);
+
+  return array;
 };
 
 const inorderTraverse = (node, array) => {
   // code goes here
+  if (!node) return array;
+  // go left
+  array = inorderTraverse(node.left, array);
+  // val in array
+  array.push(node.value);
+  // go right
+  array = inorderTraverse(node.right, array);
+  return array;
 };
 
 const postorderTraverse = (node, array) => {
   // code goes here
+  if (!node) return array;
+  // go left
+  array = postorderTraverse(node.left, array);
+  // go right
+  array = postorderTraverse(node.right, array);
+  // val in array
+  array.push(node.value);
+  return array;
 };
 
 // unit tests

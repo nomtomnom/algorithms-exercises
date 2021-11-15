@@ -23,10 +23,40 @@
 
 class Tree {
   // code goes here
+  constructor() {
+    this.root = null;
+  }
+  add(value) {
+    if (this.root === null) {
+      this.root = new Node(value);
+    } else {
+      this.root.add(value);
+    }
+  }
+  toObject() {
+    return this.root;
+  }
 }
 
 class Node {
   // code also goes here
+  constructor(value) {
+    this.left = null;
+    this.right = null;
+    this.value = value;
+    this.height = 1;
+  }
+  add(value) {
+    // recursive solution
+  }
+  balance() {
+  }
+  rotateRR() {
+  }
+  rotateLL() {
+  }
+  updateInNewLocation() {
+  }
 }
 
 // unit tests
